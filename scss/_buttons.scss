@@ -1,0 +1,138 @@
+@mixin button-variant($color, $background, $border, $color-hover, $background-hover, $border-hover) {
+	color: $color;
+	background-color: $background;
+	border-color: $border;
+	&:hover {
+		color: $color-hover;
+		background-color: $background-hover;
+		border-color: $border-hover;
+	}
+	&:active,
+	&.active {
+		color: $color-hover;
+		background-color: $background-hover;
+		border-color: $border-hover;
+	}
+	&.disabled,
+	&[disabled],
+	fieldset[disabled] & {
+		&,
+		&:hover,
+		&:focus,
+		&.focus,
+		&:active,
+		&.active {
+			background-color: $background;
+			border-color: $border;
+		}
+	}
+}
+
+// Button sizes
+@mixin button-size($padding-vertical, $padding-horizontal, $font-size, $line-height, $border-radius) {
+	padding: $padding-vertical $padding-horizontal;
+	font-size: $font-size;
+	line-height: $line-height;
+	border-radius: $border-radius;
+}
+
+//
+// Buttons
+// --------------------------------------------------
+// Base styles
+// --------------------------------------------------
+.btn {
+	display: inline-block;
+	margin-bottom: 0; // For input.btn
+	font-weight: $btn-font-weight;
+	text-align: center;
+	vertical-align: middle;
+	touch-action: manipulation;
+	cursor: pointer;
+	background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+	border: $btn-border-width solid transparent;
+	white-space: nowrap;
+	@include button-size($btn-padding-vertical, $btn-padding-horizontal, $btn-font-size, $line-height-base, $btn-border-radius);
+	user-select: none;
+	&:hover {
+		color: inherit;
+		text-decoration: none;
+	}
+	&.disabled,
+	&[disabled],
+	fieldset[disabled] & {
+		cursor: disabled;
+		opacity: .65;
+	}
+	// [converter] extracted a& to a.btn
+}
+
+a.btn {
+	&.disabled,
+	fieldset[disabled] & {
+		pointer-events: none; // Future-proof disabling of clicks on `<a>` elements
+	}
+}
+
+// Alternate buttons
+// --------------------------------------------------
+.btn--brand {
+	@include button-variant($btn-brand-color, $btn-brand-bg, $btn-brand-border, $btn-brand-color-hover, $btn-brand-bg-hover, $btn-brand-border-hover);
+}
+// Link buttons
+// -------------------------
+// Make a button look and behave like a link
+.btn--link {
+	color: $link-color;
+	font-weight: normal;
+	border-radius: 0;
+	&,
+	&:active,
+	&.active,
+	&[disabled],
+	fieldset[disabled] & {
+		background-color: transparent;
+		box-shadow: none;
+	}
+	&,
+	&:hover,
+	&:focus,
+	&:active {
+		border-color: transparent;
+	}
+	&:hover,
+	&:focus {
+		color: $link-hover-color;
+		text-decoration: $link-hover-decoration;
+		background-color: transparent;
+	}
+	&[disabled],
+	fieldset[disabled] & {
+		&:hover,
+		&:focus {
+			color: $btn-link-disabled-color;
+			text-decoration: none;
+		}
+	}
+}
+
+// Block button
+// --------------------------------------------------
+.btn--block {
+	display: block;
+	width: 100%;
+}
+
+// Vertically space out multiple block buttons
+.btn--block + .btn--block {
+	margin-top: 5px;
+}
+
+// Specificity overrides
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+	&.btn--block {
+		width: 100%;
+	}
+}
