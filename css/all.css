@@ -1768,7 +1768,7 @@ input[type="search"] {
 
 .header .navigation ul.navbar {
   float: right;
-  margin-top: 23px;
+  margin-top: 20px;
 }
 
 .header .navigation li {
@@ -1781,7 +1781,7 @@ input[type="search"] {
 .header .navigation li a {
   text-decoration: none;
   color: #fff;
-  padding: 6px 12px;
+  padding: 9px 13px;
 }
 
 .header .navigation li a:hover {
