@@ -29,14 +29,14 @@ $headings-color:          inherit !default;
 
 $font-size-h1:            60px;
 $font-size-h2:            40px;
-$font-size-h3:            20px;
-$font-size-h4:            ceil(($font-size-base * 1.25)) !default; // ~18px
+$font-size-h3:            30px;
+$font-size-h4:            20px;
 $font-size-h5:            $font-size-base !default;
 $font-size-h6:            ceil(($font-size-base * 0.85)) !default; // ~12px
 
 $margin-h1:               30px 0 !default;
-$margin-h2:               20px 0 !default;
-$margin-h3:               15px 0 !default;
+$margin-h2:               15px 0 !default;
+$margin-h3:               14px 0 12px !default;
 $margin-h4:               10px 0 !default;
 $margin-h5:               5px 0 !default;
 $margin-h6:               2px 0 !default;
@@ -90,6 +90,29 @@ $cursor-disabled:                not-allowed !default;
 .pull-left {
 	float: left;
 }
+.overflow {
+	overflow: hidden;
+}
 
+.text-center {
+	text-align: center;
+}
 
-
+.brand-color {
+	background: $brand-color;
+}
+.brand-succes {
+	background: $brand-succes;
+}
+.brand-info {
+	background: $brand-info;
+}
+.brand-inverse {
+	background: #fff;
+}
+.color-inverse {
+	color: #fff;
+}
+.color-succes {
+	color: $brand-succes;
+}
