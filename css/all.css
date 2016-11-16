@@ -1755,6 +1755,10 @@ input[type="search"] {
   height: 31px;
 }
 
+.wrapper-promo {
+  background: #eb4f4e;
+}
+
 .wrapper {
   margin: 0 auto;
 }
