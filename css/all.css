@@ -1759,6 +1759,21 @@ input[type="search"] {
   background: #eb4f4e;
 }
 
+.jquery-script-center {
+  text-align: center;
+  color: #fff;
+  font-family: Cabin, Arial, Helvetica, sans-serif;
+}
+
+.jquery-script-center h1 {
+  margin-bottom: 28px;
+}
+
+.jquery-script-center p {
+  font-size: 21px;
+  margin-bottom: 31px;
+}
+
 .wrapper {
   margin: 0 auto;
 }

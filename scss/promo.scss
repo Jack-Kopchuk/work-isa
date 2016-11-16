@@ -1,3 +1,15 @@
 .wrapper-promo {
 	background: $brand-color;
 }
+.jquery-script-center {
+	text-align: center;
+	color: #fff;
+	font-family: Cabin, Arial, Helvetica, sans-serif;
+	& h1 {
+		margin-bottom: 28px;
+	}
+	& p {
+		font-size: 21px;
+		margin-bottom: 31px;
+	}
+}
